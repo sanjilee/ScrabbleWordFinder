@@ -47,8 +47,11 @@ wordValues = {}
 value = 0
 for word in words:
     value = 0
+    copyLetters = letters.copy()
     for letter in word:
-        value += points[letter]
+        if letter in copyLetters:
+            value += points[letter]
+            copyLetters.remove(letter)
     wordValues[word] = value
 sortedWords = {k: v for k, v in sorted(wordValues.items(), key=lambda item: item[1])}
 for key in sortedWords.keys():
