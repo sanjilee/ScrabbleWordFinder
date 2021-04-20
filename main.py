@@ -1,4 +1,4 @@
-letters = upper(list(input("Letters: ")))
+letters = list(input("Letters: ").upper())
 points = {
     'A': 1,
     'E': 1,
@@ -36,6 +36,8 @@ with open('words.txt', 'r') as f:
         for letter in word:
             if letter in copyLetters:
                 copyLetters.remove(letter)
+            elif '?' in copyLetters:
+                copyLetters.remove('?')
             else:
                 equal = False
                 break
