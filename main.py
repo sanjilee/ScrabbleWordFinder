@@ -1,4 +1,4 @@
-letters = list(input("Letters: "))
+letters = upper(list(input("Letters: ")))
 points = {
     'A': 1,
     'E': 1,
